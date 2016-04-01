@@ -6,6 +6,8 @@ var async = require('async');
 var path = require('path');
 var moment = require('moment');
 
+var start_index = 1, end_index = 15;
+
 var url = 'http://cdn.serieswatch.tv/2/House%20MD/';
 
 jsdom.env({
@@ -28,7 +30,7 @@ jsdom.env({
 
       console.log(chalk.green('Total Files to be downloaded : ' + total_files));
 
-      for(var i = 1; i < 15; i++)
+      for(var i = start_index; i < end_index; i++)
       {
         (function (i) {
           var element = $('a:eq(' + i + ')');
